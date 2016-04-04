@@ -1,11 +1,16 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 base=`basename $TRAVIS_REPO_SLUG`
+# prepend base with 'docs/' if it is not the parent repo
+if [ $base != 'docs' ]; then
+  base="docs/$base";
+fi;
+echo "cloning to /tmp/$base"
 # inside this git repo we'll pretend to be a new user
 git config --global user.name "Travis CI"
 git config --global user.email "travis@nomail"
 # clone the existing github url to some directory
-git clone https://github.com/NSLS-II/NSLS-II.github.io /tmp/docs
+git clone https://github.com/NSLS-II/NSLS-II.github.io /tmp/$base
 cp -rv build/html/* /tmp/$base
 cd /tmp/$base
 git add -A
