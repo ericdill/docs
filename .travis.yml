@@ -25,7 +25,6 @@ install:
   - . ~/scripts/make-docs-env.sh
 
 script:
-  - source activate build-docs
   - . ~/scripts/build-docs.sh
 
 after_success:
