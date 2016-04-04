@@ -1,0 +1,37 @@
+language: python
+sudo: false
+
+addons:
+  apt_packages:
+      - pandoc
+env:
+  global:
+    - python: 3.5
+    - BUILD_DOCS: true
+    - GH_REF: github.com/ericdill/ericdill.github.io
+    - secure: "Z9sFg0cXkS18bQqSghPGkWTOi9p7UD7wWhj5KRjBDnqwfJBTEewy8s/hCRX7hbZEi4+ViDYKxdTZbjl1dXpBtw/ALAqGAy0V97NeyBZ0yeyWp9I4UjVeHci3yTmSOws6aViIeTv6dU0uN+zxHsTVB5bQPH+CgXsOyB1wR+jKdck="
+before_install:
+  # clone conda install/build/upload helper scripts and make them executable
+  - git clone https://github.com/NSLS-II/nsls2-ci ~/scripts
+  - chmod +x ~/scripts/*.sh
+  - . ~/scripts/install-miniconda.sh
+
+
+
+install:
+  - export GIT_FULL_HASH=`git rev-parse HEAD`
+  - conda config --set always_yes true
+  - conda update conda
+  - conda install sphinx numpydoc pip jsonschema ipython matplotlib
+  - pip install sphinx_bootstrap_theme sphinxcontrib-napoleon
+
+script:
+  - chmod +x build_docs.sh
+  - ./build_docs.sh
+
+after_success:
+  - if [ $TRAVIS_BRANCH == 'auto-build' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
+      chmod +x push_docs.sh;
+      ./push_docs.sh;
+    fi;
+  - env
