@@ -1,4 +1,7 @@
 language: python
+sudo: true
+services:
+  - docker
 env:
   global:
     - python: 3.5
