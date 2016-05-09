@@ -1,7 +1,4 @@
 language: python
-sudo: true
-services:
-  - docker
 env:
   global:
     - python: 3.5
@@ -23,4 +20,6 @@ script:
 
 after_success:
   # - . ~/scripts/push-docs.sh
+  - pass
+after_failure:
   - env
