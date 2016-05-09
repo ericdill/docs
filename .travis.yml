@@ -15,7 +15,9 @@ before_install:
 
 script:
   - ls build/html
-  - DOCS_DIR='.' bash ~/scripts/do-the-docs.sh
+  - pushd ~/scripts
+  - DOCS_DIR='.' bash do-the-docs.sh
+  - popd
   - ls build/html
 
 after_success:
