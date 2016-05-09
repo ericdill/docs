@@ -19,7 +19,7 @@ install:
 script:
   - ls build/html
   - pushd ~/scripts
-  - HTML_DIR="build/html/" DOCS_DIR='.' bash do-the-docs.sh
+  - HTML_DIR="build/html/" DOCS_DIR=$TRAVIS_BUILD_DIR bash do-the-docs.sh
   - popd
   - ls build/html
 
