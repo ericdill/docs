@@ -17,14 +17,8 @@ install:
   - . ~/scripts/install-miniconda.sh
 
 script:
-  - ls build/html
-  - pushd ~/scripts
-  - HTML_DIR="build/html/" DOCS_DIR=$TRAVIS_BUILD_DIR bash do-the-docs.sh
-  - popd
-  - ls build/html
+  - pushd ~/scripts && HTML_DIR="build/html" DOCS_DIR="$TRAVIS_BUILD_DIR" . do-the-docs.sh && popd
+  - ls $HTML_DIR
 
-after_success:
-  # - . ~/scripts/push-docs.sh
-  - pass
 after_failure:
   - env
