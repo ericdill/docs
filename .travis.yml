@@ -1,7 +1,4 @@
 language: python
-sudo: true
-services:
-  - docker
 env:
   global:
     - python: 3.5
@@ -18,7 +15,7 @@ before_install:
 
 script:
   - ls build/html
-  - DOCS_DIR='.' bash ~/scripts/build-docs.sh
+  - DOCS_DIR='.' bash ~/scripts/do-the-docs.sh
   - ls build/html
 
 after_success:
