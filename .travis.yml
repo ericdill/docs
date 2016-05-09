@@ -11,6 +11,9 @@ before_install:
   - git clone https://github.com/NSLS-II/nsls2-ci ~/scripts
   - chmod +x ~/scripts/*.sh
 
+install:
+  - . ~/scripts/install-miniconda.sh
+
 script:
   - ls build/html
   - pushd ~/scripts
