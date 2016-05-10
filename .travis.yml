@@ -5,7 +5,9 @@ env:
     - BUILD_DOCS: true
     - BUILD_DOCS_BRANCH: 'auto-build'
     - GH_REF: github.com/ericdill/ericdill.github.io
-    - secure: "Z9sFg0cXkS18bQqSghPGkWTOi9p7UD7wWhj5KRjBDnqwfJBTEewy8s/hCRX7hbZEi4+ViDYKxdTZbjl1dXpBtw/ALAqGAy0V97NeyBZ0yeyWp9I4UjVeHci3yTmSOws6aViIeTv6dU0uN+zxHsTVB5bQPH+CgXsOyB1wR+jKdck="
+    # - secure: "Z9sFg0cXkS18bQqSghPGkWTOi9p7UD7wWhj5KRjBDnqwfJBTEewy8s/hCRX7hbZEi4+ViDYKxdTZbjl1dXpBtw/ALAqGAy0V97NeyBZ0yeyWp9I4UjVeHci3yTmSOws6aViIeTv6dU0uN+zxHsTVB5bQPH+CgXsOyB1wR+jKdck="
+    -   secure: "Elpbm5GHIhZ77IQ5wYJTHRvso/g5Tbf3qf7AhommGjgjwX2lRleUx7Pv/OIEdhK1zSWjQ4K1ttW+/mik5/22/TntP241krWaFqziZ+QPjTxvpPdNkF3l68+Qi6cOFlOl5ekm8GEuR7cUrbrC7vZh6BWoUvpNgaJ9sPrto9x74dAfL7Fs2gWMvQmmdEr9Qnh2+uY/4O7MJybfMGivh84XyFbY3qmE+xzBPb3810GNguvNDAzRu5gbwi16lgxEi3u4Augz80JvkDEAvwwAX10g2fK5S5lznp+GndHUqtwkAQYQ87JyQv6U6Nqd4UHqvaF/kl8v4bLnHiSK8kJ9bLwgxG5o8i65fIexyen+6HL7VDwfTHu7tcqTb3nGBeYKTq4uocRq/7hMAkIgZuLOcPjP7N+xQ3ION3mt0oBotBIwuPK3ZoG/uQCIlNPu7B2YvUI1bjYZR0ZeI0iPSvHDJPkSm0bu6TYhVrlmZhLB52E9wcK9oEXcmhBiXs3hnuCqRDCA4+UPWGrkb/yiGYqEXqpRj5grxnUgSGlWJ83aL79bi9jFB//JuOQjZ5z5X1/Sk1WrrsNGAgPjENyImCgyzOmOHN3wemcmFobwJMH1bssT588Mtxm6WR9iFX3neZTh/CtwugjOON/gOTcfSyfdV3XbmTeca97VQzGGmYviNTUls9M="
+
 
 
 before_install:
