@@ -71,8 +71,8 @@ Automated installation procedure for collection environment
     su - {{ BEAMLINE_USER }}
     pushd $HOME/{{ IPYTHON_CONFIGURATION_LOCATION }}/profile_{{ IPYTHON_CONFIGURATION_NAME }}
     find -name *.py -exec git add {} \;
-    git commit -am "Automated weekly code backup: YYYY-Week"
-    git tag -a YYYY-Week -m "Automated weekly tag: YYYY-Week"
+    git commit -am "Automated weekly code backup: `date +%Y-%W`"
+    git tag -a YYYY-Week -m "Automated weekly tag: `date +%Y-%W`"
     git push
     git push --tags
     # grab a list of the files that were changed
@@ -87,7 +87,7 @@ Automated installation procedure for collection environment
 2. Write the current state of the collection environment ::
 
     conda_envs_path="/opt/conda_envs"
-    previous_collection_name=`ls -r $conda_envs | grep collection | head -n2 | tail -n1`
+    previous_collection_name=`ls -r $conda_envs_path | grep collection | head -n2 | tail -n1`
     conda list -p $conda_envs_path/$previous_collection_name > /opt/conda/envs_list/previous_collection_name--END
     mkdir -p /opt/conda/envs_list
     pushd /opt/conda/envs_list
