@@ -122,9 +122,9 @@ Automated installation procedure for collection environment
 4. Update the collection launching script to point to /opt/conda_envs/collection-YEAR-WEEK_OF_YEAR ::
 
     echo "#! /bin/bash
-source activate /opt/conda_envs/collection-`date +%Y-%W`"
-ipython --profile=collection --profile_dir=/home/{{ BEAMLINE_USER }}/ipython_profile
-" > /bin/bs.sh
+    source activate /opt/conda_envs/collection-`date +%Y-%W`"
+    ipython --profile=collection --profile_dir=/home/{{ BEAMLINE_USER }}/ipython_profile
+    " > /bin/bs.sh
 
 6. **(Manual step)** Run UAT with the beamline staff.  If UAT fails, fix the
    problems on the spot or copy the stack trace to https://github.com/NSLS-II/Bug-Reports/issues
